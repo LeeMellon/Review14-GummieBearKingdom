@@ -1,5 +1,49 @@
-﻿@model Review14.Models.Product
+﻿@model IEnumerable<Review14.Models.Product>
 @{
     ViewData["Title"] = "Product - Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h1>Gummy Kingdoms Products</h1>
+
+<table class="products-table">
+    <tr>
+        <th>
+            <label>Product Name</label>
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            <label>Price</label>
+        </th>
+        <th>
+            <label>Description</label>
+        </th>
+        <th>
+            <label>Rating</label>
+        </th>
+    </tr>
+
+
+    @foreach (var product in Model)
+    {
+    <tr class="products-display">
+        <td>
+            @Html.DisplayFor(model => product.Name)
+        </td>
+        <td>
+            <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" />
+        </td>
+        <td>
+            @Html.DisplayFor(model => product.Price)
+        </td>
+        <td class="products-description">
+            @Html.DisplayFor(model => product.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(model => product.Rating)
+        </td>
+    </tr>
+    }
+</table>

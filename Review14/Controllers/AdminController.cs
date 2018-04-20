@@ -14,7 +14,7 @@ namespace Review14.Controllers
     public class AdminController : Controller
     {
 
-        private GummyKingdomDbContext db = new GummyKingdomDbContex();
+        private GummyKingdomDbContext db = new GummyKingdomDbContext();
         
         //Index//
         public IActionResult AdminIndex()
@@ -71,7 +71,7 @@ namespace Review14.Controllers
         public IActionResult AdminReviewCreate(Review review)
         {
             db.Reviews.Add(review);
-            db.SaveChenges();
+            db.SaveChanges();
 
             return RedirectToAction("Index", "Product");
         }
@@ -104,7 +104,7 @@ namespace Review14.Controllers
         {
             db.Users.Add(user);
             db.SaveChanges();
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Home");
         }
 
         //Edit User Route//
@@ -119,7 +119,7 @@ namespace Review14.Controllers
         {
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Home");
         }
 
 

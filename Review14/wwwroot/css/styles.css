@@ -1,12 +1,18 @@
 ﻿body {
-    color: red;
+
 }
 
 
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    color: red;
+.nav-tabs {
+    display: inline-block;
+ 
+}
+
+
+.products-description{
+
+    color: green;
+}
+td {
+    padding:3vw;
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Review14.Models
 {
-    public class GummyKindomDbContext : DbContext
+    public class GummyKingdomDbContext : DbContext
 
     {
-        public GummyKindomDbContext()
+        public GummyKingdomDbContext()
         {
         }
 
@@ -24,7 +24,7 @@ namespace Review14.Models
             options.UseMySql(@"Server=localhost;Port=8889;database=gummykingdom;uid=root;pwd=root;");
         }
 
-        public GummyKindomDbContext(DbContextOptions<GummyKindomDbContext> options)
+        public GummyKingdomDbContext(DbContextOptions<GummyKingdomDbContext> options)
             : base(options)
         {
         }
