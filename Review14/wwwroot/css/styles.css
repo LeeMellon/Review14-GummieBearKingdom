@@ -1,8 +1,10 @@
 ﻿body {
+    color: red;
 }
 
 
 .navbar navbar-default {
     display: flex;
     flex-direction: row;
+    color: red;
 }
