@@ -26,8 +26,10 @@
         @Html.EditorFor(model => model.UserEmail)
         <lable>User Image Url </lable>
         @Html.EditorFor(model => model.UserImg)
+        <lable>User Image Alt </lable>
+        @Html.EditorFor(model => model.UserImgAlt)
 
-        <input type="submit" value="Add" class="btn btn-default" />
+        <input type="submit" value="Save" class="btn btn-default" />
     }
     <p>@Html.ActionLink("Back to Admin Menu", "AdminIndex")</p>
 
