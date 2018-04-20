@@ -22,16 +22,28 @@ From the terminal go into the root folder of your project directory and navigate
 From here you database should be up and running and ready for you to add the products you create.
 
 ..* Generic Product Class Schema
-...Id(int)
-...Name (string)
-...Cost(int)
-...Description(string)
-...Img(string)
-...Rating(int)
-
+... ProductId (int)
+... Name (string)
+... Cost (int)
+... Description (string)
+... Img (string)
+... Rating (int)
+... Reviews (ICollections List)
 
 ..* User Model
-...TBD
+... UserId (int)
+... UserNameFirst (string)
+... UserNameLast (string)
+... ProfileName (string)
+... UserEmail (string)
+... Reviews (ICollections List)
+
+..* Reviews
+... ReviewId (int)
+... ReviewText (string)
+... UserId (int)
+... ProductId (int)
+
 
 ### Known Bugs
 ***
