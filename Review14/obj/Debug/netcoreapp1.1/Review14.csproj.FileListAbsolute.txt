@@ -6,3 +6,6 @@ C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.csp
 C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.csproj.CoreCompileInputs.cache
 C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfoInputs.cache
 C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfo.cs
+C:\Users\epicodus\Desktop\Review14\Review14\bin\Debug\netcoreapp1.1\Review14.pdb
+C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.dll
+C:\Users\epicodus\Desktop\Review14\Review14\obj\Debug\netcoreapp1.1\Review14.pdb
