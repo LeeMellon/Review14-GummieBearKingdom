@@ -12,6 +12,7 @@ namespace Review14.Models
     {
         [Key]
         public int ReviewId { get; set; }
+        public string Title { get; set; }
         public string ReviewText { get; set; }
         public int UserId { get; set; }
         public int ProductId { get; set; }

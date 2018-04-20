@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Review14.Controllers
 {
-    public class Product : Controller
+    public class UserController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

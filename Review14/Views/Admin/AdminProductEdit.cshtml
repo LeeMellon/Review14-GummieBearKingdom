@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Review14.Models.Product
 @{
+    ViewData["Title"] = "Admin - Product Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<html>
+<head>
+    <title>Product - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit a product from the catalogue</h4>
+    @using (Html.BeginForm())
+    {
+        <lable>Edit Product ID (!!! Use Caution !!!)</lable>
+        @Html.EditorFor(model => model.ProdictId)
+        <lable>Edit Product Name</lable>
+        @Html.EditorFor(model => model.Name)
+        <lable>Edit Product Price</lable>
+        @Html.EditorFor(model => model.Price)
+        <lable>Edit Product Description</lable>
+        @Html.EditorFor(model => model.Description)
+        <lable>Edit Product Image url</lable>
+        @Html.EditorFor(model => model.Img)
+        <lable>Edit Product Rating</lable>
+        @Html.EditorFor(model => model.Rating)
+
+        <input type="submit" value="Save" class="btn btn-default" />
+    }
+    <p>@Html.ActionLink("Back to Admin Menu", "AdminIndex")</p>
+
+</body>
+</html>

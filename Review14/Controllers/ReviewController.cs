@@ -8,10 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Review14.Controllers
 {
-    public class Admin : Controller
+    public class ReviewController : Controller
     {
         // GET: /<controller>/
-        public IActionResult AdminIndex()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Details()
         {
             return View();
         }
