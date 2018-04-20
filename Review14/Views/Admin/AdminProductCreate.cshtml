@@ -1,0 +1,32 @@
+﻿@model Review14.Models.Product
+@{
+    ViewData["Title"] = "Product - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>Travel Blog - Create</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Add a new experience</h4>
+    @using (Html.BeginForm())
+    {
+        
+        <lable>New Product's Name</lable>
+        @Html.TextBoxFor(model => model.Name)
+        <lable>New Product Price</lable>
+        @Html.TextBoxFor(model => model.Price)
+        <lable>New Product Description</lable>
+        @Html.TextAreaFor(model => model.Description)
+        <lable>New Product Image url</lable>
+        @Html.TextBoxFor(model => model.Img)
+  
+        <input type="submit" value="Add" />
+    }
+    <p>@Html.ActionLink("Back to Products Home", "Index")</p>
+
+</body>
+</html>

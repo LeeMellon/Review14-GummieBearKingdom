@@ -3,8 +3,10 @@
 }
 
 
-.navbar navbar-default {
-    display: flex;
-    flex-direction: row;
-    color: red;
+.navbar navbar-nav {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: red
 }

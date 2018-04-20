@@ -5,7 +5,7 @@
     <title>C# To Do List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="~/wwwroot/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 
 </head>
@@ -16,11 +16,11 @@
                 <a class="navbar-brand" href="#">Gummy Kingdom</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Admin</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li @Html.ActionLink("Home", "Index")</li>
+                <li>@Html.ActionLink("About", "About")</li>
+                <li>@Html.ActionLink("Contact", "Contact")</li>
+                <li>@Html.ActionLink("Products", "Index", "Product")</li>
+                <li>@Html.ActionLink("Admin", "AdminIndex", "Admin")</li>
             </ul>
         </div>
     </nav>

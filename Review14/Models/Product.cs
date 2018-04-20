@@ -13,10 +13,10 @@ namespace Review14.Models
         [Key]
         public int ProdictId { get; set; }
         public string Name { get; set; }
-        public int Cost { get; set; }
+        public int Price { get; set; }
         public string Description { get; set; }
         public string Img { get; set; }
-        public int Rating { get; set; }
+        public int Rating { get; set; } = 0;
         public virtual ICollection<Review> ProductReviews { get; set; }
 
     }
