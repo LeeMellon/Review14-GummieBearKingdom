@@ -23,10 +23,12 @@
         @Html.TextAreaFor(model => model.Description)
         <lable>New Product's Image url</lable>
         @Html.TextBoxFor(model => model.Img)
+        <lable>New Product's Image alt</lable>
+        @Html.TextBoxFor(model => model.ImgAlt)
         <lable>New Product's Rating</lable>
         @Html.TextBoxFor(model => model.Rating)
-        
-        <input type="submit" value="Add" class="btn btn-default"/>
+
+        <input type="submit" value="Add" class="btn btn-default" />
     }
     <p>@Html.ActionLink("Back to Admin Menu", "AdminIndex")</p>
 

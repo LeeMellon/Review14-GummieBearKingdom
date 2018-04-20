@@ -1,5 +1,10 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Review14.Models.User
 @{
+    ViewData["Title"] = "User- Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@Html.DisplayFor(model => model.ProfileName)
+<img src="@Url.Content(Model.UserImg)" alt="@Model.UserImgAlt" />
+
+<p>Add user Reviews here...</p>

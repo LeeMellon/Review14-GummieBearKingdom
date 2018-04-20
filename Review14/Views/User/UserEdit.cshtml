@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Review14.Models.User
 @{
+    ViewData["Title"] = "User- Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<html>
+<head>
+    <title>User - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit your user profile</h4>
+    @using (Html.BeginForm())
+    {
+        
+        <lable>Your First Name</lable>
+        @Html.EditorFor(model => model.UserNameFirst)
+        <lable>Your Last Name</lable>
+        @Html.EditorFor(model => model.UserNameLast)
+        <lable>Your User Profile Name</lable>
+        @Html.EditorFor(model => model.ProfileName)
+        <lable>Your Email </lable>
+        @Html.EditorFor(model => model.UserEmail)
+        <lable>Your Image Url </lable>
+        @Html.EditorFor(model => model.UserImg)
+        <lable>Your Image Alt </lable>
+        @Html.EditorFor(model => model.UserImgAlt)
+
+        <input type="submit" value="Save" class="btn btn-default" />
+    }
+    <p>@Html.ActionLink("Back to Main Menu", "Home", "Index")</p>
+
+</body>
+</html>

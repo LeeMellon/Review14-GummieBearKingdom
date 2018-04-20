@@ -11,9 +11,9 @@ namespace Review14.Models
     public class Product
     {
         [Key]
-        public int ProdictId { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
         public string Img { get; set; }
         public string ImgAlt { get; set; }

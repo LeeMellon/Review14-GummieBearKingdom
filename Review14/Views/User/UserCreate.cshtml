@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Review14.Models.User
 @{
+    ViewData["Title"] = "Admin - User Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<html>
+<head>
+    <title>New User - Create</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Create your profile</h4>
+    @using (Html.BeginForm())
+    {
+        <lable>Your First Name</lable>
+        @Html.TextBoxFor(model => model.UserNameFirst)
+        <lable>Your Last Name</lable>
+        @Html.TextAreaFor(model => model.UserNameLast)
+        <lable>Profile Name</lable>
+        @Html.TextBoxFor(model => model.ProfileName)
+        <lable>Your Email </lable>
+        @Html.TextBoxFor(model => model.UserEmail)
+        <lable>Url for your profile image</lable>
+        @Html.TextBoxFor(model => model.UserImg)
+        <lable>Alternate text for profile image </lable>
+        @Html.TextBoxFor(model => model.UserImgAlt)
+
+        <input type="submit" value="Add" class="btn btn-default" />
+    }
+    <p>@Html.ActionLink("Back to Main Menu", "Index", "Home")</p>
+
+</body>
+</html>
