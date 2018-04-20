@@ -16,6 +16,8 @@ namespace Review14.Models
         public string UserNameLast { get; set; }
         public string ProfileName { get; set;  }
         public string UserEmail { get; set; }
+        public string UserImg { get; set; }
+        public string UserImgAlt { get; set; }
         public virtual ICollection<Review> UserReviews { get; set; }
     }
 }
