@@ -30,19 +30,19 @@ From here you database should be up and running and ready for you to add the pro
 ... Rating (int)
 ... Reviews (ICollections List)
 
-..* User Model
-... UserId (int)
-... UserNameFirst (string)
-... UserNameLast (string)
-... ProfileName (string)
-... UserEmail (string)
-... Reviews (ICollections List)
+..*User Model
+...UserId (int)..
+...UserNameFirst (string)..
+...UserNameLast (string)..
+...ProfileName (string)..
+...UserEmail (string)..
+...Reviews (ICollections List)..
 
-..* Reviews
-... ReviewId (int)
-... ReviewText (string)
-... UserId (int)
-... ProductId (int)
+..*Reviews
+...ReviewId (int)
+...ReviewText (string)
+...UserId (int)
+...ProductId (int)
 
 
 ### Known Bugs
