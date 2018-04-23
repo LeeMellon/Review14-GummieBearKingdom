@@ -92,6 +92,13 @@ namespace Review14.Controllers
         }
 
         //USER ROUTES//
+        
+        //User Index
+        public IActionResult AdminUserIndex()
+        {
+            var UsersList = db.Users.ToList();
+            return View(UsersList);
+        }
 
         //Create User Routes//
         public IActionResult AdminUserCreate()
