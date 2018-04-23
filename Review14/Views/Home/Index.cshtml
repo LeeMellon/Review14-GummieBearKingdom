@@ -1,5 +1,26 @@
-﻿@{
+﻿@model IEnumerable<Review14.Models.Product>
+
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>DOOD!</h1>
+<h1>Featured Products</h1>
+
+
+@foreach (var product in Model)
+{
+    <div class="featured-container">
+        <div class="featureds-title-bar">
+            <h2>@product.Name</h2>
+            <h2>@product.Rating</h2>
+        </div>
+        <div class="featured-details-container">
+            <div class="fetured-description-card">
+                <img src=@Url.Content(product.Img)  alt=@product.ImgAlt/>            
+                <h4>@product.Description</h4>
+                <h4>@product.Price</h4>
+            </div>
+        </div>
+    </div>
+
+ }
