@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Review14.Models.User>
+@{
+                ViewData["Title"] = "Admin - User Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+            }
+
+< h1 > Gummy Kingdoms Users</ h1 >
+
+
+
+   < table class="admin-users-table">
+<tr>
+    <th>
+        <label>User Id</label>
+    </th>
+    <th>
+        <label>User First Name</label>
+    </th>
+    <th>
+        <label>User Last Name</label>
+    </th>
+    <th>
+        <label>User Profile Name</label>
+    </th>
+    <th>
+        <label>User Email</label>
+    </th>
+    <th>
+        <label>User Profile Image</label>
+    </th>
+    <th>
+        <label>User Image Alt</label>
+    </th>
+</tr>
+
+
+    @foreach(var user in Model)
+        {
+<tr class="products-display">
+
+    <td>
+        @Html.DisplayFor(model => user.UserId)
+    </td>
+    <td>
+        @Html.DisplayFor(model => user.UserNameFirst)
+    </td>
+    <td>
+        @Html.DisplayFor(model => user.UserNameLast)
+    </td>
+    <td>
+        @Html.DisplayFor(model => user.ProfileName)
+    </td>
+    <td>
+        @Html.DisplayFor(model => user.UserEmail)
+    <td>
+        <img src="@Url.Content(user.UserImg)" alt="@user.UserImgAlt" />
+    </td>
+    <td>
+        @Html.DisplayFor(model => user.UserImgAlt)
+    </td>
+
+</tr>
+    }
+</table>
+}
