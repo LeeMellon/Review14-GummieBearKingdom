@@ -1,0 +1,18 @@
+﻿@model Review14.Models.Review
+
+@{
+    ViewData["Title"] = "Review - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Are you sure you want to delete this?</h2>
+<hr />
+@Html.DisplayFor(model => model.ReviewId): @Html.DisplayFor(model => model.Title)
+
+@Html.TextAreaFor(model => model.ReviewText)
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+<p>@Html.ActionLink("Back to list", "ReviewIndex", "Admin")</p>

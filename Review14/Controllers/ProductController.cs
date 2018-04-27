@@ -24,5 +24,20 @@ namespace Review14.Controllers
         {
             return View();
         }
+
+        public ActionResult Delete(int id)
+        {
+            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            return View(thisProduct);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            db.Products.Remove(thisProduct);
+            db.SaveChanges();
+            return RedirectToAction("ProductIndex", "Admin");
+        }
     }
 }

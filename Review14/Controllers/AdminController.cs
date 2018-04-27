@@ -20,7 +20,7 @@ namespace Review14.Controllers
         public IActionResult Index()
         {
 
-                      
+          
             return View();
         }
 
@@ -47,7 +47,7 @@ namespace Review14.Controllers
         {
             db.Products.Add(product);
             db.SaveChanges();
-            return RedirectToAction("Index", "Product");
+            return RedirectToAction("ProductIndex");
         }
 
         //Edit Product Route//
@@ -62,7 +62,7 @@ namespace Review14.Controllers
         {
             db.Entry(product).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index", "Product");
+            return RedirectToAction("ProductIndex");
         }
 
 
