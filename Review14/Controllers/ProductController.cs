@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Review14.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Review14.Models;
+using System.Dynamic;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,9 +21,13 @@ namespace Review14.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            dynamic myModel = new ExpandoObject();
+            myModel.Product = thisProduct;
+            myModel.Reviews = db.Reviews.Where(r => r.ProductId == id);
+            return View(myModel);
         }
 
         public ActionResult Delete(int id)
