@@ -17,7 +17,11 @@ namespace Review14.Controllers
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
         public IActionResult Index()
         {
-            return View(db.Products.ToList());
+            var products = db.Products.ToList();
+            var productsList = new List<Product> { };
+            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+
+            return View(productsList);
         }
 
         // GET: /<controller>/
@@ -26,7 +30,7 @@ namespace Review14.Controllers
             var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
             dynamic myModel = new ExpandoObject();
             myModel.Product = thisProduct;
-            myModel.Reviews = db.Reviews.Where(r => r.ProductId == id);
+            myModel.Reviews = db.Reviews.Where(r => r.ProductId == id).Include(r => r.User);
             return View(myModel);
         }
 

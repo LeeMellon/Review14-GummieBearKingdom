@@ -6,21 +6,56 @@
 }
 <h1>Featured Products</h1>
 
-
-@foreach (var product in Model)
-{
     <div class="featured-container">
         <div class="featureds-title-bar">
-            <h2>@product.Name</h2>
-            <h2>@product.Rating</h2>
-        </div>
-        <div class="featured-details-container">
-            <div class="fetured-description-card">
-                <img src=@Url.Content(product.Img)  alt=@product.ImgAlt/>            
-                <h4>@product.Description</h4>
-                <h4>@product.Price</h4>
-            </div>
-        </div>
-    </div>
+            <table class="products-table">
+                <tr>
+                    <th>
+                        <label>Product Name</label>
+                    </th>
+                    <th>
 
- }
+                    </th>
+                    <th>
+                        <label>Price</label>
+                    </th>
+                    <th>
+                        <label>Description</label>
+                    </th>
+                    <th>
+                        <label>Rating</label>
+                    </th>
+                    <th>
+                        <label>Details</label>
+                    </th>
+                </tr>
+
+
+                @foreach (var product in Model)
+                { 
+                    <tr class="products-display">
+                        <td>
+                            @Html.DisplayFor(model => product.Name)
+                        </td>
+                        <td>
+                            <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => product.Price)
+                        </td>
+                        <td class="products-description">
+                            @Html.DisplayFor(model => product.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => product.Rating)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "details", "Product", new { id=@product.ProductId })
+                        </td>
+
+                    </tr>
+                }
+
+</table>
+    </div>
+</div>

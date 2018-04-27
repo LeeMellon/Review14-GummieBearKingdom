@@ -31,7 +31,9 @@ namespace Review14.Controllers
         //Products Index
         public IActionResult ProductIndex()
         {
-            var productsList = db.Products.ToList();
+            var products = db.Products.ToList();
+            var productsList = new List<Product> { };
+            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
             return View(productsList);
         }
 

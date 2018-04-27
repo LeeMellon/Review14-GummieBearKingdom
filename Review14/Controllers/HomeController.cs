@@ -15,10 +15,12 @@ namespace Review14.Controllers
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
         public IActionResult Index()
         {
-            List<Product> SortedList = db.Products.OrderByDescending(product => product.Rating).ToList();
-            var FeaturesList = SortedList.Take(4);
+            var products = db.Products.ToList();
+            var productsList = new List<Product> { };
+            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+            var SortedList = productsList.OrderByDescending(product => product.Rating).ToList().Take(4);
             
-            return View(FeaturesList);
+            return View(SortedList);
         }
 
         public IActionResult About()

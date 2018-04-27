@@ -1,49 +1,61 @@
 ﻿@model IEnumerable<Review14.Models.Product>
+
 @{
-    ViewData["Title"] = "Product - Home";
+    ViewData["Title"] = "Product Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h1>Featured Products</h1>
 
-<h1>Gummy Kingdoms Products</h1>
+<div class="featured-container">
+    <div class="featureds-title-bar">
+        <table class="products-table">
+            <tr>
+                <th>
+                    <label>Product Name</label>
+                </th>
+                <th>
 
-<table class="products-table">
-    <tr>
-        <th>
-            <label>Product Name</label>
-        </th>
-        <th>
-            
-        </th>
-        <th>
-            <label>Price</label>
-        </th>
-        <th>
-            <label>Description</label>
-        </th>
-        <th>
-            <label>Rating</label>
-        </th>
-    </tr>
+                </th>
+                <th>
+                    <label>Price</label>
+                </th>
+                <th>
+                    <label>Description</label>
+                </th>
+                <th>
+                    <label>Rating</label>
+                </th>
+                <th>
+                    <label>Details</label>
+                </th>
+            </tr>
 
 
-    @foreach (var product in Model)
-    {
-    <tr class="products-display">
-        <td>
-            @Html.DisplayFor(model => product.Name)
-        </td>
-        <td>
-            <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" />
-        </td>
-        <td>
-            @Html.DisplayFor(model => product.Price)
-        </td>
-        <td class="products-description">
-            @Html.DisplayFor(model => product.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(model => product.Rating)
-        </td>
-    </tr>
-    }
-</table>
+            @foreach (var product in Model)
+            {
+                <tr class="products-display">
+                    <td>
+                        @Html.DisplayFor(model => product.Name)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => product.Price)
+                    </td>
+                    <td class="products-description">
+                        @Html.DisplayFor(model => product.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => product.Rating)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "details", "Product", new { id = @product.ProductId })
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

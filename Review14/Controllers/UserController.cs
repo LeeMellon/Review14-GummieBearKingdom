@@ -16,7 +16,7 @@ namespace Review14.Controllers
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Create()
         {
             return View();
         }

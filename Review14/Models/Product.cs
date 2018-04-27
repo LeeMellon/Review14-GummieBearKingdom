@@ -20,5 +20,18 @@ namespace Review14.Models
         public int Rating { get; set; } = 0;
         public virtual ICollection<Review> ProductReviews { get; set; }
 
+        private GummyKingdomDbContext db = new GummyKingdomDbContext();
+
+        public int SetRating()
+        {
+            var ratingList = new List<int>{ } ;
+            foreach(Review r in db.Reviews.Where(p => p.ProductId == this.ProductId))
+            {
+              ratingList.Add(r.Rating);
+            }
+            var rNums = ratingList.Count();
+            this.Rating = ((ratingList.Sum()) / rNums);
+            return this.Rating;
+        }
     }
 }
