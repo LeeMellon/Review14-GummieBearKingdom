@@ -17,24 +17,33 @@ namespace Review14.Controllers
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
         
         //Index//
-        public IActionResult AdminIndex()
+        public IActionResult Index()
         {
+
+                      
             return View();
         }
-        
+
 
 
         //PRODUCT ROUTES//
 
+        //Products Index
+        public IActionResult ProductIndex()
+        {
+            var productsList = db.Products.ToList();
+            return View(productsList);
+        }
+
 
         //Create Product Routes//
-        public IActionResult AdminProductCreate()
+        public IActionResult CreateProduct()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AdminProductCreate(Product product)
+        public IActionResult CreateProduct(Product product)
         {
             db.Products.Add(product);
             db.SaveChanges();
@@ -42,14 +51,14 @@ namespace Review14.Controllers
         }
 
         //Edit Product Route//
-        public IActionResult AdminProductEdit(int id)
+        public IActionResult EditProduct(int id)
         {
             var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
             return View(thisProduct);
         }
 
         [HttpPost]
-        public IActionResult AdminProductEdit(Product product)
+        public IActionResult EditProduct(Product product)
         {
             db.Entry(product).State = EntityState.Modified;
             db.SaveChanges();
@@ -61,14 +70,21 @@ namespace Review14.Controllers
         //REVIEW ROUTES//
 
 
+        //Review Index
+        public IActionResult ReviewIndex()
+        {
+            var reviewsList = db.Reviews.ToList();
+            return View(reviewsList);
+        }
+
         //Create Review Routes//
-        public IActionResult AdminReviewCreate()
+        public IActionResult CreateReview()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AdminReviewCreate(Review review)
+        public IActionResult CreateReview(Review review)
         {
             db.Reviews.Add(review);
             db.SaveChanges();
@@ -77,14 +93,14 @@ namespace Review14.Controllers
         }
 
         //Edit Review Route//
-        public IActionResult AdminReviewEdit(int id)
+        public IActionResult EditReview(int id)
         {
             var thisReview = db.Reviews.FirstOrDefault(review => review.ReviewId == id);
             return View(thisReview);
         }
 
         [HttpPost]
-        public IActionResult AdminReviewEdit(Review review)
+        public IActionResult EditReview(Review review)
         {
             db.Entry(review).State = EntityState.Modified;
             db.SaveChanges();
@@ -94,20 +110,20 @@ namespace Review14.Controllers
         //USER ROUTES//
         
         //User Index
-        public IActionResult AdminUserIndex()
+        public IActionResult UserIndex()
         {
             var UsersList = db.Users.ToList();
             return View(UsersList);
         }
 
         //Create User Routes//
-        public IActionResult AdminUserCreate()
+        public IActionResult CreateUser()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AdminUserCreate(User user)
+        public IActionResult CreateUser(User user)
         {
             db.Users.Add(user);
             db.SaveChanges();
@@ -115,14 +131,14 @@ namespace Review14.Controllers
         }
 
         //Edit User Route//
-        public IActionResult AdminEdit(int id)
+        public IActionResult UserEdit(int id)
         {
             var thisUser = db.Users.FirstOrDefault(user => user.UserId == id);
             return View(thisUser);
         }
 
         [HttpPost]
-        public IActionResult AdminEdit(User user)
+        public IActionResult UserEdit(User user)
         {
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();

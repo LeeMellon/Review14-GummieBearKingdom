@@ -1,5 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Home - Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h1>Administration Main Page</h1>
+
+<p>@Html.ActionLink("Create a Product", "CreateProduct") | @Html.ActionLink("View All Products", "ProductIndex") | @Html.ActionLink("Create a Review", "CreateReview")|@Html.ActionLink("See All Reviews", "ReviewIndex") | @Html.ActionLink("Create a User", "CreateUser") | @Html.ActionLink("All Users", "UserIndex")</p>
