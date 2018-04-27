@@ -1,11 +1,35 @@
-﻿@model Review14.Models.Product
+﻿@using Review14.Models;
+@model dynamic
 @{
     ViewData["Title"] = "Product - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.DisplayFor(model => model.Name)
-@Html.DisplayFor(model => model.Price)
-@Html.DisplayFor(model => model.ProductId)
-@Html.DisplayFor(model => model.Rating)
-<img src= "@Url.Content(Model.Img)" alt="@Model.ImgAlt" />
+<div>
+    <img src= "@Url.Content(Model.Product.Img)" alt="@Model.Product.ImgAlt" />
+    <div>
+    <h2>@Model.Product.Name</h2>
+    <h3>@Model.Product.Price</h3>
+    <h3>@Model.Product.Rating</h3>
+    </div>
+    <div>
+    <textarea>@Model.Product.Description</textarea>
+    </div>
+</div>
+
+
+@foreach(Review review in Model.Reviews)
+{
+    <div>
+        <div>
+            <h2>@review.Title</h2>
+            <h3>@review.Rating</h3>
+            <h3>@review.User.ProfileName</h3>
+        </div>
+        <div>
+            <textarea>
+                @review.ReviewText
+            </textarea>
+        </div>
+    </div>
+}
