@@ -23,7 +23,7 @@ namespace Review14.Controllers
 
         public IActionResult Details(int id)
         {
-            // var thisUser = db.Users.Where(user => user.UserId == id).Include(user => user.UserReviews);
+        
             var thisUser = db.Users.FirstOrDefault(user => user.UserId == id);
             dynamic myModel = new ExpandoObject();
             myModel.User = thisUser;
