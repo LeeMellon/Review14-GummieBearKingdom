@@ -4,11 +4,11 @@
                 Layout = "~/Views/Shared/_Layout.cshtml";
             }
 
-< h1 > Gummy Kingdoms Users</ h1 >
+<h1> Gummy Kingdoms Users</h1>
 
 
 
-   < table class="admin-users-table">
+   <table class="admin-users-table">
 <tr>
     <th>
         <label>User Id</label>
@@ -34,9 +34,9 @@
 </tr>
 
 
+<tr class="products-display">
     @foreach(var user in Model)
         {
-<tr class="products-display">
 
     <td>
         @Html.DisplayFor(model => user.UserId)
@@ -52,6 +52,7 @@
     </td>
     <td>
         @Html.DisplayFor(model => user.UserEmail)
+    </td>
     <td>
         <img src="@Url.Content(user.UserImg)" alt="@user.UserImgAlt" />
     </td>
@@ -59,7 +60,6 @@
         @Html.DisplayFor(model => user.UserImgAlt)
     </td>
 
-</tr>
     }
+</tr>
 </table>
-}

@@ -1,5 +1,46 @@
-﻿@model Review14.Models.Review
+﻿@model IEnumerable<Review14.Models.Review>
 @{
-    ViewData["Title"] = "Review - Home";
+    ViewData["Title"] = "Review - Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h1>Gummy Kingdoms Products</h1>
+
+<table class="products-table">
+    <tr>
+        <th>
+            <label>Review Title</label>
+        </th>
+        <th>
+            <lable>Review Text</lable>
+        </th>
+        <th>
+            <label>User</label>
+        </th>
+        <th>
+            <label>Product Name</label>
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+
+    @foreach (var review in Model)
+    {
+        <tr class="products-display">
+            <td>
+                @Html.DisplayFor(model => review.Title)
+            </td>
+            <td>
+                @Html.TextAreaFor(model => review.ReviewText)
+            </td>
+            <td>
+                @Html.DisplayFor(model=>review.User.ProfileName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => review.Product.Name)
+            </td>
+        </tr>
+    }
+</table>

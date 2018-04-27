@@ -8,9 +8,10 @@ using Review14.Models;
 namespace Review14.Migrations
 {
     [DbContext(typeof(GummyKingdomDbContext))]
-    partial class GummyKingdomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180427173158_AddVirtualUserToReview")]
+    partial class AddVirtualUserToReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -83,7 +84,7 @@ namespace Review14.Migrations
 
             modelBuilder.Entity("Review14.Models.Review", b =>
                 {
-                    b.HasOne("Review14.Models.Product", "Product")
+                    b.HasOne("Review14.Models.Product")
                         .WithMany("ProductReviews")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);

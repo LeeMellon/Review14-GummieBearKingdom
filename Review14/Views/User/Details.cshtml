@@ -1,10 +1,23 @@
-﻿@model Review14.Models.User
+﻿@using Review14.Models;
+@model dynamic
 @{
-    ViewData["Title"] = "User- Details";
+    ViewData["Title"] = "User - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.DisplayFor(model => model.ProfileName)
-<img src="@Url.Content(Model.UserImg)" alt="@Model.UserImgAlt" />
+<img src="@Url.Content(Model.User.UserImg)" alt="@Model.User.UserImgAlt" />
 
-<p>Add user Reviews here...</p>
+<p>@Model.User.UserNameFirst</p>
+<p>@Model.User.UserNameLast</p>
+<p>@Model.User.ProfileName</p>
+<p>@Model.User.UserEmail</p>
+<p>@Model.User.UserImg</p>
+<p>@Model.User.UserImgAlt</p>
+
+@foreach (Review review in Model.Reviews)
+{
+    <div class="container" style="border: red solid 2px">
+    <p>@review.Title</p>
+    <textarea>@review.ReviewText</textarea>
+    </div>
+}
