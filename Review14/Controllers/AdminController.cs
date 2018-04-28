@@ -7,15 +7,26 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Review14.Models;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Review14.Controllers
 {
     public class AdminController : Controller
     {
 
-        private GummyKingdomDbContext db = new GummyKingdomDbContext();
-        
+        private IAdminRepository AdminRepo;
+
+        public AdminController(IAdminRepository repo = null)
+        {
+            if (repo == null)
+            {
+                this.AdminRepo = new EFAdminRepository();
+            }
+            else
+            {
+                this.AdminRepo = repo;
+            }
+        }
+
         //Index//
         public IActionResult Index()
         {
@@ -31,7 +42,7 @@ namespace Review14.Controllers
         //Products Index
         public IActionResult ProductIndex()
         {
-            var products = db.Products.ToList();
+            var products = AdminRepo.Products.ToList();
             var productsList = new List<Product> { };
             foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
             return View(productsList);
@@ -47,23 +58,21 @@ namespace Review14.Controllers
         [HttpPost]
         public IActionResult CreateProduct(Product product)
         {
-            db.Products.Add(product);
-            db.SaveChanges();
+            AdminRepo.SaveProduct(product);
             return RedirectToAction("ProductIndex");
         }
 
         //Edit Product Route//
         public IActionResult EditProduct(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            var thisProduct = AdminRepo.Products.FirstOrDefault(product => product.ProductId == id);
             return View(thisProduct);
         }
 
         [HttpPost]
         public IActionResult EditProduct(Product product)
         {
-            db.Entry(product).State = EntityState.Modified;
-            db.SaveChanges();
+            AdminRepo.EditProduct(product);
             return RedirectToAction("ProductIndex");
         }
 
@@ -75,7 +84,7 @@ namespace Review14.Controllers
         //Review Index
         public IActionResult ReviewIndex()
         {
-            var reviewsList = db.Reviews.ToList();
+            var reviewsList = AdminRepo.Reviews.ToList();
             return View(reviewsList);
         }
 
@@ -88,8 +97,7 @@ namespace Review14.Controllers
         [HttpPost]
         public IActionResult CreateReview(Review review)
         {
-            db.Reviews.Add(review);
-            db.SaveChanges();
+            AdminRepo.SaveReview(review);
 
             return RedirectToAction("Index", "Product");
         }
@@ -97,15 +105,14 @@ namespace Review14.Controllers
         //Edit Review Route//
         public IActionResult EditReview(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(review => review.ReviewId == id);
+            var thisReview = AdminRepo.Reviews.FirstOrDefault(review => review.ReviewId == id);
             return View(thisReview);
         }
 
         [HttpPost]
         public IActionResult EditReview(Review review)
         {
-            db.Entry(review).State = EntityState.Modified;
-            db.SaveChanges();
+            AdminRepo.EditReview(review);
             return RedirectToAction("Index", "Review");
         }
 
@@ -114,7 +121,7 @@ namespace Review14.Controllers
         //User Index
         public IActionResult UserIndex()
         {
-            var UsersList = db.Users.ToList();
+            var UsersList = AdminRepo.Users.ToList();
             return View(UsersList);
         }
 
@@ -127,23 +134,21 @@ namespace Review14.Controllers
         [HttpPost]
         public IActionResult CreateUser(User user)
         {
-            db.Users.Add(user);
-            db.SaveChanges();
+            AdminRepo.SaveUser(user);
             return RedirectToAction("Index", "Home");
         }
 
         //Edit User Route//
         public IActionResult UserEdit(int id)
         {
-            var thisUser = db.Users.FirstOrDefault(user => user.UserId == id);
+            var thisUser = AdminRepo.Users.FirstOrDefault(user => user.UserId == id);
             return View(thisUser);
         }
 
         [HttpPost]
         public IActionResult UserEdit(User user)
         {
-            db.Entry(user).State = EntityState.Modified;
-            db.SaveChanges();
+            AdminRepo.EditUser(user);
             return RedirectToAction("Index", "Home");
         }
 

@@ -19,5 +19,24 @@ namespace Review14.Models
         public string UserImg { get; set; }
         public string UserImgAlt { get; set; }
         public virtual ICollection<Review> UserReviews { get; set; }
+
+        public override bool Equals(System.Object otherUser)
+        {
+            if (!(otherUser is User))
+            {
+                return false;
+            }
+            else
+            {
+                User newUser = (User)otherUser;
+                return this.UserId.Equals(newUser.UserId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.UserId.GetHashCode();
+        }
+
     }
 }

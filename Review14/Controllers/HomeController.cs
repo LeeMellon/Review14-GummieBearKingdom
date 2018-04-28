@@ -12,13 +12,10 @@ namespace Review14.Controllers
 {
     public class HomeController : Controller
     {
-        private GummyKingdomDbContext db = new GummyKingdomDbContext();
         public IActionResult Index()
         {
-            var products = db.Products.ToList();
-            var productsList = new List<Product> { };
-            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
-            var SortedList = productsList.OrderByDescending(product => product.Rating).ToList().Take(4);
+            var newProduct = new Product();
+            var SortedList = newProduct.GetFeatured();
             
             return View(SortedList);
         }

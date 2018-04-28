@@ -6,27 +6,37 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Review14.Models;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Review14.Controllers
 {
 
     public class ReviewController : Controller
     {
-        private GummyKingdomDbContext db = new GummyKingdomDbContext();
-        
-        
+        private IReviewRepository ReviewRepo;
+
+        public ReviewController(IReviewRepository repo = null)
+        {
+            if (repo == null)
+            {
+                this.ReviewRepo = new EFReviewRepository();
+            }
+            else
+            {
+                this.ReviewRepo = repo;
+            }
+        }
+
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var reviewsList = db.Reviews.Include(r => r.User).Include(r => r.Product);
+            var reviewsList = ReviewRepo.Reviews.Include(r => r.User).Include(r => r.Product);
          
             return View(reviewsList);
         }
 
         public ActionResult Delete(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(review => review.ReviewId == id);
+            var thisReview = ReviewRepo.Reviews.FirstOrDefault(review => review.ReviewId == id);
 
             return View(thisReview);
         }
@@ -34,9 +44,9 @@ namespace Review14.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(review => review.ReviewId == id);
-            db.Reviews.Remove(thisReview);
-            db.SaveChanges();
+            var thisReview = ReviewRepo.Reviews.FirstOrDefault(review => review.ReviewId == id);
+            ReviewRepo.Remove(thisReview);
+ 
             return RedirectToAction("ReviewIndex", "Admin");
         }
     }

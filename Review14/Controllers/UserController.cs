@@ -7,13 +7,23 @@ using Microsoft.EntityFrameworkCore;
 using Review14.Models;
 using System.Dynamic;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Review14.Controllers
 {
     public class UserController : Controller
     {
-        private GummyKingdomDbContext db = new GummyKingdomDbContext();
+        private IUserRepository UserRepo;
+        public UserController(IUserRepository repo = null)
+        {
+            if (repo == null)
+            {
+                this.UserRepo = new EFUserRepository();
+            }
+            else
+            {
+                this.UserRepo = repo;
+            }
+        }
 
         // GET: /<controller>/
         public IActionResult Create()
@@ -24,10 +34,10 @@ namespace Review14.Controllers
         public IActionResult Details(int id)
         {
         
-            var thisUser = db.Users.FirstOrDefault(user => user.UserId == id);
+            var thisUser = UserRepo.Users.FirstOrDefault(user => user.UserId == id);
             dynamic myModel = new ExpandoObject();
             myModel.User = thisUser;
-            myModel.Reviews = db.Reviews.Where(r => r.UserId == id);
+            myModel.Reviews = UserRepo.Reviews.Where(r => r.UserId == id);
 
             return View(myModel);
         }

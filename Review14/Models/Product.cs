@@ -22,6 +22,24 @@ namespace Review14.Models
 
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
 
+        public override bool Equals(System.Object otherProduct)
+        {
+            if (!(otherProduct is Product))
+            {
+                return false;
+            }
+            else
+            {
+                Product newProduct = (Product)otherProduct;
+                return this.ProductId.Equals(newProduct.ProductId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ProductId.GetHashCode();
+        }
+
         public int SetRating()
         {
             var ratingList = new List<int>{ } ;
@@ -33,5 +51,15 @@ namespace Review14.Models
             this.Rating = ((ratingList.Sum()) / rNums);
             return this.Rating;
         }
-    }
+
+        public IEnumerable<Product> GetFeatured()
+        {
+            var products = db.Products.ToList();
+            var productsList = new List<Product> { };
+                foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+            var SortedList = productsList.OrderByDescending(product => product.Rating).ToList().Take(4);
+            
+                return SortedList;
+        }
+}
 }

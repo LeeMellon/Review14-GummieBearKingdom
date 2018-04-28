@@ -14,10 +14,22 @@ namespace Review14.Controllers
 {
     public class ProductController : Controller
     {
-        private GummyKingdomDbContext db = new GummyKingdomDbContext();
+        private IProductRepository ProductRepo;
+
+        public ProductController(IProductRepository repo = null)
+        {
+            if (repo == null)
+            {
+                this.ProductRepo = new EFProductRepository();
+            }
+            else
+            {
+                this.ProductRepo = repo;
+            }
+        }
         public IActionResult Index()
         {
-            var products = db.Products.ToList();
+            var products = ProductRepo.Products.ToList();
             var productsList = new List<Product> { };
             foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
 
@@ -27,25 +39,24 @@ namespace Review14.Controllers
         // GET: /<controller>/
         public IActionResult Details(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            var thisProduct = ProductRepo.Products.FirstOrDefault(product => product.ProductId == id);
             dynamic myModel = new ExpandoObject();
             myModel.Product = thisProduct;
-            myModel.Reviews = db.Reviews.Where(r => r.ProductId == id).Include(r => r.User);
+            myModel.Reviews = ProductRepo.Reviews.Where(r => r.ProductId == id).Include(r => r.User);
             return View(myModel);
         }
 
         public ActionResult Delete(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
+            var thisProduct = ProductRepo.Products.FirstOrDefault(product => product.ProductId == id);
             return View(thisProduct);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(product => product.ProductId == id);
-            db.Products.Remove(thisProduct);
-            db.SaveChanges();
+            var thisProduct = ProductRepo.Products.FirstOrDefault(product => product.ProductId == id);
+            ProductRepo.Remove(thisProduct);
             return RedirectToAction("ProductIndex", "Admin");
         }
     }
