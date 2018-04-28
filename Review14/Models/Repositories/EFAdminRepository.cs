@@ -23,20 +23,20 @@ namespace Review14.Models
         { get { return db.Products; } }
 
 
-        public Product Edit(Product product)
+        public Product EditProduct(Product product)
         {
             db.Entry(product).State = EntityState.Modified;
             db.SaveChanges();
             return product;
         }
 
-        public void Remove(Product product)
+        public void RemoveProduct(Product product)
         {
             db.Products.Remove(product);
             db.SaveChanges();
         }
 
-        public Product Save(Product product)
+        public Product SaveProduct(Product product)
         {
             db.Products.Add(product);
             db.SaveChanges();
@@ -51,20 +51,20 @@ namespace Review14.Models
         public IQueryable<Review> Reviews
         { get { return db.Reviews; } }
 
-        public Review Edit(Review review)
+        public Review EditReview(Review review)
         {
             db.Entry(review).State = EntityState.Modified;
             db.SaveChanges();
             return review;
         }
 
-        public void Remove(Review review)
+        public void RemoveReview(Review review)
         {
             db.Reviews.Remove(review);
             db.SaveChanges();
         }
 
-        public Review Save(Review review)
+        public Review SaveReview(Review review)
         {
             db.Reviews.Add(review);
             db.SaveChanges();
@@ -80,20 +80,20 @@ namespace Review14.Models
         public IQueryable<User> Users
         { get { return db.Users; } }
 
-        public User Edit(User user)
+        public User EditUser(User user)
         {
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
             return user;
         }
 
-        public void Remove(User user)
+        public void RemoveUser(User user)
         {
             db.Users.Remove(user);
             db.SaveChanges();
         }
 
-        public User Save(User user)
+        public User SaveUser(User user)
         {
             db.Users.Add(user);
             db.SaveChanges();
@@ -106,49 +106,6 @@ namespace Review14.Models
             db.SaveChanges();
         }
 
-        public Product SaveProduct(Product product)
-        {
-            throw new NotImplementedException();
-        }
-
-        public User SaveUser(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public User EditUser(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveUser(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Product EditProduct(Product product)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveProduct(Product product)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Review SaveReview(Review review)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Review EditReview(Review review)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveReview(Review review)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -20,12 +20,12 @@ namespace Review14.Models
         }
 
 
-        public IQueryable<Product> Product
+        public IQueryable<Product> Products
         { get { return db.Products; } }
 
-        public IQueryable<Product> Products => throw new NotImplementedException();
 
-        public IQueryable<Review> Reviews => throw new NotImplementedException();
+        public IQueryable<Review> Reviews
+        { get { return db.Reviews; } }
 
         public Product Edit(Product product)
         {

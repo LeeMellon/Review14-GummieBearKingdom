@@ -19,12 +19,14 @@
         @Html.TextBoxFor(model => model.Title)
         <lable>New Review's Text</lable>
         @Html.TextAreaFor(model => model.ReviewText)
+        <lable>New Review's Rating</lable>
+        @Html.TextBoxFor(model => model.Rating)
         <lable>New Review's User Id</lable>
         @Html.TextBoxFor(model => model.UserId)
         <br />
         <lable>New Review's Product Id</lable>
         @Html.TextBoxFor(model => model.ProductId)
-     
+
         <input type="submit" value="Add" class="btn btn-default" />
     }
     <p>@Html.ActionLink("Back to Admin Menu", "Index")</p>

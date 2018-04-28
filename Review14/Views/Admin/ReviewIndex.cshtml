@@ -21,6 +21,9 @@
             <label>Product Id</label>
         </th>
         <th>
+            <label>Rating</label>
+        </th>
+        <th>
 
         </th>
         <th>
@@ -31,25 +34,28 @@
 
     @foreach (var review in Model)
     {
-        <tr class="products-display">
-            <td>
-                @Html.DisplayFor(model => review.Title)
-            </td>
-            <td>
-                @Html.TextAreaFor(model => review.ReviewText)
-            </td>
-            <td >
-                @Html.DisplayFor(model => review.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => review.ProductId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditReview", new { id=review.ReviewId })
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", "Review", new { id=review.ReviewId })
-            </td>
-        </tr>
+    <tr class="products-display">
+        <td>
+            @Html.DisplayFor(model => review.Title)
+        </td>
+        <td>
+            @Html.TextAreaFor(model => review.ReviewText)
+        </td>
+        <td>
+            @Html.DisplayFor(model => review.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => review.ProductId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => review.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditReview", new { id = review.ReviewId })
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", "Review", new { id = review.ReviewId })
+        </td>
+    </tr>
     }
 </table>

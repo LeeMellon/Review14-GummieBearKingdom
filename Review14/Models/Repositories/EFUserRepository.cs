@@ -20,12 +20,12 @@ namespace Review14.Models
         }
 
 
-        public IQueryable<User> User
+        public IQueryable<User> Users
         { get { return db.Users; } }
 
-        public IQueryable<User> Users => throw new NotImplementedException();
+        public IQueryable<Review> Reviews
+        { get { return db.Reviews; } }
 
-        public IQueryable<Review> Reviews => throw new NotImplementedException();
 
         public User Edit(User user)
         {

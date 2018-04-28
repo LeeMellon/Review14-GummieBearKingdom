@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Review14.Models.Review
 @{
+    ViewData["Title"] = "Review - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<html>
+<head>
+    <title>New Review - Create</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Add a new review /h4>
+    @using (Html.BeginForm())
+    {
+
+        <lable>New Review's Title</lable>
+        @Html.TextBoxFor(model => model.Title)
+        <lable>New Review's Text</lable>
+        @Html.TextAreaFor(model => model.ReviewText)
+        <lable>New Review's Rating</lable>
+        @Html.TextBoxFor(model => model.Rating)
+        <lable>New Review's User Id</lable>
+        @Html.TextBoxFor(model => model.UserId)
+        <br />
+        <lable>New Review's Product Id</lable>
+        @Html.TextBoxFor(model => model.ProductId)
+
+        <input type="submit" value="Add" class="btn btn-default" />
+    }
+    <p>@Html.ActionLink("Back to Main Menu", "Index")</p>
+
+</body>
+</html>

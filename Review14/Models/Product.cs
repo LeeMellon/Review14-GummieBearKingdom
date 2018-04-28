@@ -48,8 +48,16 @@ namespace Review14.Models
               ratingList.Add(r.Rating);
             }
             var rNums = ratingList.Count();
+            if (rNums > 0)
+            {
             this.Rating = ((ratingList.Sum()) / rNums);
             return this.Rating;
+            }
+            else
+            {
+                this.Rating = 1;
+                return this.Rating;
+            }
         }
 
         public IEnumerable<Product> GetFeatured()

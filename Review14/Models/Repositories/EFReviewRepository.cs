@@ -20,10 +20,9 @@ namespace Review14.Models
         }
 
 
-        public IQueryable<Review> Review
+        public IQueryable<Review> Reviews
         { get { return db.Reviews; } }
 
-        public IQueryable<Review> Reviews => throw new NotImplementedException();
 
         public Review Edit(Review review)
         {
