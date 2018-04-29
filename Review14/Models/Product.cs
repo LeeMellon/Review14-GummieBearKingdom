@@ -17,7 +17,7 @@ namespace Review14.Models
         public string Description { get; set; }
         public string Img { get; set; }
         public string ImgAlt { get; set; }
-        public int Rating { get; set; } = 0;
+        public string Rating { get; set; }
         public virtual ICollection<Review> ProductReviews { get; set; }
 
         private GummyKingdomDbContext db = new GummyKingdomDbContext();
@@ -40,7 +40,7 @@ namespace Review14.Models
             return this.ProductId.GetHashCode();
         }
 
-        public int SetRating()
+        public string SetRating()
         {
             var ratingList = new List<int>{ } ;
             foreach(Review r in db.Reviews.Where(p => p.ProductId == this.ProductId))
@@ -48,14 +48,14 @@ namespace Review14.Models
               ratingList.Add(r.Rating);
             }
             var rNums = ratingList.Count();
-            if (rNums > 0)
+            if (rNums > 5)
             {
-            this.Rating = ((ratingList.Sum()) / rNums);
-            return this.Rating;
+            this.Rating = ((ratingList.Sum()) / rNums).ToString();
+            return this.Rating.ToString();
             }
             else
             {
-                this.Rating = 1;
+                this.Rating = $"This product has {rNums.ToString()} user reviews";
                 return this.Rating;
             }
         }
