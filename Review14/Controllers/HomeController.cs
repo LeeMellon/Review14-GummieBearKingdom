@@ -12,10 +12,13 @@ namespace Review14.Controllers
 {
     public class HomeController : Controller
     {
+        private IAdminRepository AdminRepo;
+        private IReviewRepository ReviewRepo;
         public IActionResult Index()
         {
             var newProduct = new Product();
-            var SortedList = newProduct.GetFeatured();
+            var reviews = ReviewRepo.Reviews.ToList();
+            var SortedList = newProduct.GetFeatured(reviews);
             
             return View(SortedList);
         }

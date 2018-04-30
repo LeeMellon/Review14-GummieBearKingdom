@@ -40,10 +40,10 @@ namespace Review14.Models
             return this.ProductId.GetHashCode();
         }
 
-        public string SetRating()
+        public string SetRating(List<Review> reviews)
         {
             var ratingList = new List<int>{ } ;
-            foreach(Review r in db.Reviews.Where(p => p.ProductId == this.ProductId))
+            foreach(Review r in reviews.Where(p => p.ProductId == this.ProductId))
             {
               ratingList.Add(r.Rating);
             }
@@ -60,11 +60,11 @@ namespace Review14.Models
             }
         }
 
-        public IEnumerable<Product> GetFeatured()
+        public IEnumerable<Product> GetFeatured(List<Review> reviews)
         {
             var products = db.Products.ToList();
             var productsList = new List<Product> { };
-                foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+                foreach (Product p in products) { p.SetRating(reviews); productsList.Add(p); }
             var SortedList = productsList.OrderByDescending(product => product.Rating).ToList().Take(4);
             
                 return SortedList;

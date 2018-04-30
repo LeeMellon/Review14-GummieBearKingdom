@@ -35,7 +35,6 @@ C:/Users/El Fayoumi/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcor
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.runtimeconfig.dev.json
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.dll
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.pdb
-/Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.csprojResolveAssemblyReference.cache
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.csproj.CoreCompileInputs.cache
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.AssemblyInfo.cs
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.dll

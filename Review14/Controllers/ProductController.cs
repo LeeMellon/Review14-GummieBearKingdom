@@ -15,6 +15,7 @@ namespace Review14.Controllers
     public class ProductController : Controller
     {
         private IProductRepository ProductRepo;
+        private IReviewRepository ReviewRepo;
 
         public ProductController(IProductRepository repo = null)
         {
@@ -30,8 +31,9 @@ namespace Review14.Controllers
         public IActionResult Index()
         {
             var products = ProductRepo.Products.ToList();
+            var reviews = ReviewRepo.Reviews.ToList();
             var productsList = new List<Product> { };
-            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+            foreach (Product p in products) { p.SetRating(reviews); productsList.Add(p); }
 
             return View(productsList);
         }

@@ -14,7 +14,7 @@ namespace Review14.Controllers
     {
 
         private IAdminRepository AdminRepo;
-
+        private IReviewRepository ReviewRepo;
         public AdminController(IAdminRepository repo = null)
         {
             if (repo == null)
@@ -42,9 +42,10 @@ namespace Review14.Controllers
         //Products Index
         public IActionResult ProductIndex()
         {
+            var reviews = ReviewRepo.Reviews.ToList();
             var products = AdminRepo.Products.ToList();
             var productsList = new List<Product> { };
-            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
+            foreach (Product p in products) { p.SetRating(reviews); productsList.Add(p); }
             return View(productsList);
         }
 
