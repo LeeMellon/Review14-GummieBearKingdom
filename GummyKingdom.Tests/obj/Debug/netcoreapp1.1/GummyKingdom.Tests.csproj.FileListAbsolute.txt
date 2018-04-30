@@ -1,0 +1,16 @@
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\GummyKingdom.Tests.deps.json
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\GummyKingdom.Tests.runtimeconfig.json
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\GummyKingdom.Tests.runtimeconfig.dev.json
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\GummyKingdom.Tests.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\Review14.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\Review14.pdb
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.csprojResolveAssemblyReference.cache
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.csproj.CoreCompileInputs.cache
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.AssemblyInfo.cs
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.csproj.CopyComplete
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\bin\Debug\netcoreapp1.1\GummyKingdom.Tests.pdb
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.dll
+C:\Users\El Fayoumi\Desktop\Review14-GummieBearKingdom\GummyKingdom.Tests\obj\Debug\netcoreapp1.1\GummyKingdom.Tests.pdb
