@@ -9,16 +9,12 @@ using Moq;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-
-
 namespace GummyKingdom.Tests.ControllerTests
 {
     [TestClass]
-    public class ProductControllerTest
+    public class HomeControllerTest
     {
-        private Mock<IProductRepository> mock = new Mock<IProductRepository>();
-        //private Mock<IProductRepository> mockReviews = new Mock<IProductRepository>();
-        EFProductRepository db = new EFProductRepository(new TestDbContext());
+        private Mock<IAdminRepository> mock = new Mock<IAdminRepository>();
         EFAdminRepository adminDb = new EFAdminRepository(new TestDbContext());
 
         private void DbSetup()
@@ -41,7 +37,7 @@ namespace GummyKingdom.Tests.ControllerTests
         }
         public void Dispose()
         {
-            db.ClearAll();
+            adminDb.ClearAllProducts();
             adminDb.ClearAllReviews();
             adminDb.ClearAllUsers();
         }
@@ -52,7 +48,7 @@ namespace GummyKingdom.Tests.ControllerTests
             //Arrange
             Dispose();
             DbSetup();
-            ProductController controller = new ProductController(mock.Object);
+            AdminController controller = new AdminController(mock.Object);
 
             //Act
             var result = controller.Index();
@@ -62,91 +58,39 @@ namespace GummyKingdom.Tests.ControllerTests
         }
 
         [TestMethod]
-        public void Mock_GetViewResultDetails_ActionResult()
+        public void Mock_GetViewResultContact_ActionResult()
         {
             //Arrange
             Dispose();
             DbSetup();
-            ProductController controller = new ProductController(mock.Object);
+            AdminController controller = new AdminController(mock.Object);
 
             //Act
-            var result = controller.Details(2);
+            var result = controller.Index();
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(ActionResult));
         }
 
         [TestMethod]
-        public void Mock_GetViewResultDeleteGet_ActionResult()
+        public void Mock_GetViewResultAbout_ActionResult()
         {
             //Arrange
             Dispose();
             DbSetup();
-            ProductController controller = new ProductController(mock.Object);
+            AdminController controller = new AdminController(mock.Object);
 
             //Act
-            var result = controller.Delete(1);
+            var result = controller.Index();
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(ActionResult));
         }
 
-        [TestMethod]
-        public void Mock_GetViewResultDeletePost_ActionResult()
-        {
-            //Arrange
-            Dispose();
-            DbSetup();
-            ProductController controller = new ProductController(mock.Object);
 
-            //Act
-            var result = controller.DeleteConfirmed(1);
-
-            //Assert
-            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
-        }
-
-
-
-        [TestMethod]
-        public void Mock_IndexContainsModelData_List()
-        {
-            //Arrange
-            Dispose();
-            DbSetup();
-            ViewResult indexView = new ProductController(mock.Object).Index() as ViewResult;
-
-            //Act
-            var result = indexView.ViewData.Model;
-
-            //Assert
-            Assert.IsInstanceOfType(result, typeof(List<Product>));
-        }
-
-        [TestMethod]
-        public void Mock_IndexModelContainsProducts_Collection()
-        {
-
-            //Arrange
-            Dispose();
-            DbSetup();
-            ProductController controller = new ProductController(mock.Object);
-            Product product = new Product { ProductId = 1, Name = "Test Rock", Description = "Yum. Gummy Rock. Igneous Delicious!", Price = 9, Img = "~/img/boulder.jpg", ImgAlt = "Chewy Test Monkey", Rating = "5" };
-
-            //Act
-            ViewResult indexView = controller.Index() as ViewResult;
-            List<Product> collection = indexView.ViewData.Model as List<Product>;
-
-            //Assert
-            CollectionAssert.Contains(collection, product);
-        }
 
 
 
 
     }
 }
-
-    
-
-

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Review14.Models;
+using System.Dynamic;
 
 
 namespace Review14.Controllers
@@ -42,11 +43,12 @@ namespace Review14.Controllers
         //Products Index
         public IActionResult ProductIndex()
         {
-            var reviews = ReviewRepo.Reviews.ToList();
-            var products = AdminRepo.Products.ToList();
+
+            var products = AdminRepo.Products.Include(p => p.ProductReviews);
             var productsList = new List<Product> { };
-            foreach (Product p in products) { p.SetRating(reviews); productsList.Add(p); }
+            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
             return View(productsList);
+
         }
 
 
@@ -63,7 +65,17 @@ namespace Review14.Controllers
             return RedirectToAction("ProductIndex");
         }
 
-        //Edit Product Route//
+        //public IActionResult Details(int id)
+        //{
+        //    var thisProduct = AdminRepo.Products.FirstOrDefault(product => product.ProductId == id);
+        //    dynamic myModel = new ExpandoObject();
+        //    myModel.Product = thisProduct;
+        //    myModel.Reviews = AdminRepo.Reviews.Where(r => r.ProductId == id).Include(r => r.User);
+        //    return RedirectToAction("Details", "Product", myModel);
+        //}
+
+
+        //Edit Product Routes//
         public IActionResult EditProduct(int id)
         {
             var thisProduct = AdminRepo.Products.FirstOrDefault(product => product.ProductId == id);
@@ -75,6 +87,29 @@ namespace Review14.Controllers
         {
             AdminRepo.EditProduct(product);
             return RedirectToAction("ProductIndex");
+        }
+
+        //Delete Product Routes//
+
+        public ActionResult DeleteProduct(int id)
+        {
+            var thisProduct = AdminRepo.Products.FirstOrDefault(product => product.ProductId == id);
+            return View(thisProduct);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteProductConfirmed(int id)
+        {
+            var thisProduct = AdminRepo.Products.FirstOrDefault(product => product.ProductId == id);
+            AdminRepo.RemoveProduct(thisProduct);
+            return RedirectToAction("ProductIndex", "Admin");
+        }
+
+        [HttpPost, ActionName("DeleteAll")]
+        public IActionResult DeleteAllProducts()
+        {
+            AdminRepo.ClearAllProducts();
+            return RedirectToAction("ProductIndex", "Admin");
         }
 
 
@@ -140,14 +175,14 @@ namespace Review14.Controllers
         }
 
         //Edit User Route//
-        public IActionResult UserEdit(int id)
+        public IActionResult EditUser(int id)
         {
             var thisUser = AdminRepo.Users.FirstOrDefault(user => user.UserId == id);
             return View(thisUser);
         }
 
         [HttpPost]
-        public IActionResult UserEdit(User user)
+        public IActionResult EditUser(User user)
         {
             AdminRepo.EditUser(user);
             return RedirectToAction("Index", "Home");

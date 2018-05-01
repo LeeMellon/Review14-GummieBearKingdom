@@ -31,6 +31,14 @@ namespace Review14.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Create(User user)
+        {
+            UserRepo.Save(user);
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult Details(int id)
         {
         

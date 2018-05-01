@@ -39,3 +39,14 @@ C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcorea
 C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.dll
 C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.pdb
 C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.csprojResolveAssemblyReference.cache
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.deps.json
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.runtimeconfig.json
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.runtimeconfig.dev.json
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.dll
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.pdb
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.csprojResolveAssemblyReference.cache
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.csproj.CoreCompileInputs.cache
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfoInputs.cache
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfo.cs
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.dll
+C:\Users\Haberdash\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.pdb

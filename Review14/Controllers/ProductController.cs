@@ -30,15 +30,20 @@ namespace Review14.Controllers
         }
         public IActionResult Index()
         {
-            var products = ProductRepo.Products.ToList();
-            var reviews = ReviewRepo.Reviews.ToList();
+            var products = ProductRepo.Products.Include(p => p.ProductReviews);
             var productsList = new List<Product> { };
-            foreach (Product p in products) { p.SetRating(reviews); productsList.Add(p); }
+            foreach (Product p in products) { p.SetRating(); productsList.Add(p); }
 
             return View(productsList);
         }
 
-        // GET: /<controller>/
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            ProductRepo.Save(product);
+            return RedirectToAction("ProductIndex");
+        }
+
         public IActionResult Details(int id)
         {
             var thisProduct = ProductRepo.Products.FirstOrDefault(product => product.ProductId == id);

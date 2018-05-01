@@ -23,6 +23,8 @@ namespace Review14.Models
         public IQueryable<Review> Reviews
         { get { return db.Reviews; } }
 
+        public IQueryable<Product> Products
+        { get { return db.Products; } }
 
         public Review Edit(Review review)
         {
