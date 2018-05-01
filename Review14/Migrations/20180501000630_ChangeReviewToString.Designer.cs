@@ -8,9 +8,10 @@ using Review14.Models;
 namespace Review14.Migrations
 {
     [DbContext(typeof(GummyKingdomDbContext))]
-    partial class GummyKingdomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180501000630_ChangeReviewToString")]
+    partial class ChangeReviewToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

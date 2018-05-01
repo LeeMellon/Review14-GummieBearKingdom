@@ -9,17 +9,6 @@ C:/Users/epicodus/Desktop/Review14/Review14/obj/Debug/netcoreapp1.1/Review14.Ass
 C:/Users/epicodus/Desktop/Review14/Review14/bin/Debug/netcoreapp1.1/Review14.pdb
 C:/Users/epicodus/Desktop/Review14/Review14/obj/Debug/netcoreapp1.1/Review14.dll
 C:/Users/epicodus/Desktop/Review14/Review14/obj/Debug/netcoreapp1.1/Review14.pdb
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.csprojResolveAssemblyReference.cache
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.csproj.CoreCompileInputs.cache
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.AssemblyInfoInputs.cache
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.AssemblyInfo.cs
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.deps.json
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.runtimeconfig.json
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.runtimeconfig.dev.json
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.dll
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.pdb
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.dll
-C:/Users/epicodus/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.pdb
 C:/Users/El Fayoumi/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.deps.json
 C:/Users/El Fayoumi/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.runtimeconfig.json
 C:/Users/El Fayoumi/Desktop/Review14-GummieBearKingdom/Review14/bin/Debug/netcoreapp1.1/Review14.runtimeconfig.dev.json
@@ -39,3 +28,14 @@ C:/Users/El Fayoumi/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcor
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.AssemblyInfo.cs
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.dll
 /Users/Guest/Desktop/Review14-GummieBearKingdom/Review14/obj/Debug/netcoreapp1.1/Review14.pdb
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.deps.json
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.runtimeconfig.json
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.runtimeconfig.dev.json
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.dll
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\bin\Debug\netcoreapp1.1\Review14.pdb
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.csproj.CoreCompileInputs.cache
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfoInputs.cache
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.AssemblyInfo.cs
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.dll
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.pdb
+C:\Users\epicodus\Desktop\Review14-GummieBearKingdom\Review14\obj\Debug\netcoreapp1.1\Review14.csprojResolveAssemblyReference.cache
