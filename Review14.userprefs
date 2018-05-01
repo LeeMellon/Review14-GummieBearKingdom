@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{A5C8237C-9A22-49C3-88F3-91EA223C386A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Review14/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GummyKingdom.Tests/Models/ProductTests.cs">
     <Files>
-      <File FileName="GummyKingdom.Tests/Models/ProductTests.cs" Line="77" Column="13" />
-      <File FileName="GummyKingdom.Tests/ControllerTests/ProductControllerTest.cs" Line="79" Column="9" />
+      <File FileName="GummyKingdom.Tests/Models/ProductTests.cs" Line="101" Column="10" />
+      <File FileName="GummyKingdom.Tests/ControllerTests/ProductControllerTest.cs" Line="81" Column="21" />
       <File FileName="Review14/Models/Product.cs" Line="74" Column="1" />
       <File FileName="GummyKingdom.Tests/ControllerTests/ReviewControllerTests.cs" Line="1" Column="1" />
       <File FileName="Review14/Controllers/ProductController.cs" Line="26" Column="17" />
