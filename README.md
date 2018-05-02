@@ -8,16 +8,16 @@
 * Create Reviews as Admin
 * View Products List, Details
 * View and Edit User Details as both Admin and User
-
-
-### Future Functionality
-***
-* Review products as user.
 * View product reviews
 * View reviews by user
 * Product ratings system
 * Featured display of top rated products
 * Fully functional nav bar
+
+
+### Future Functionality
+***
+* Review products as user.
 * Search
 *  FUll page styling
 
@@ -32,9 +32,12 @@ Install and run MAMP [which can be found here](https://www.mamp.info/en/download
 
 Launch MAMP, click on preferences and under the Ports tab, set the MySql port to **8889**.
 
-From the terminal go into the root folder of your project directory and navigate to the folder that contains your .csproj file, and type: dotnet ef database update
+From the terminal go into the root folder of your project directory and navigate to the folder that contains your .csproj file, and type: dotnet ef database update --GummyKingdomDbContext ,
+or for testing purposes type :
+dotnet ef database update --TestDbContext.
 
 From here you database should be up and running and ready for you to add the products you create.
+
 
 ### Technologies Used
 ***
@@ -51,10 +54,11 @@ From here you database should be up and running and ready for you to add the pro
 
 * ProductId (int)
 * Name (string)
-* Cost (int)
+* Price (decimal)
 * Description (string)
 * Img (string)
-* Rating (int)
+* ImgAlt (string)
+* Rating (string)
 * Reviews (ICollections List)
 
 #### User Model
@@ -70,9 +74,13 @@ From here you database should be up and running and ready for you to add the pro
 #### Review Model
 ***
 * ReviewId (int)
+* Title (string)
 * ReviewText (string)
 * UserId (int)
+* Rating (int) [Range(1,5)]
+* User (User)
 * ProductId (int)
+* Product (Product)
 
 
 ### Known Bugs
