@@ -48,6 +48,8 @@ namespace Review14.Controllers
         {
             var thisProduct = ProductRepo.Products.FirstOrDefault(product => product.ProductId == id);
             dynamic myModel = new ExpandoObject();
+            thisProduct.RoundPrice();
+            thisProduct.SetRating();
             myModel.Product = thisProduct;
             myModel.Reviews = ProductRepo.Reviews.Where(r => r.ProductId == id).Include(r => r.User);
             return View(myModel);

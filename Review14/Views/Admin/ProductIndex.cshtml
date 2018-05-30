@@ -31,32 +31,35 @@
         </th>
     </tr>
 
+</table>
 
     @foreach (var product in Model)
     {
-    <tr class="products-display">
-        <td>
+   
+    <a href=@Url.Action("Details/" + @product.ProductId + "",  "Product")>
+    <div class="products-display">
+        <h2>
             @Html.DisplayFor(model => product.Name)
-        </td>
-        <td>
-            <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" />
-        </td>
-        <td>
+        </h2>
+        <h2>
+            <img src="@Url.Content(product.Img)" alt="@product.ImgAlt" class="product-image" />
+        </h2>
+        <h2>
             @Html.DisplayFor(model => product.Price)
-        </td>
-        <td class="products-description">
+        </h2>
+        <h2 class="products-description">
             @Html.DisplayFor(model => product.Description)
-        </td>
-        <td>
+        </h2>
+        <h2>
             @Html.DisplayFor(model => product.Rating)
-        </td>
-        <td>
+        </h2>
+        <h2>
             @Html.ActionLink("Edit", "EditProduct", new { id = product.ProductId })
-        </td>
-        <td>
+        </h2>
+        <h2>
             @Html.ActionLink("Delete", "Delete", "Product", new { id = product.ProductId })
-        </td>
+        </h2>
 
-    </tr>
+    </div>
+        </a>
     }
-</table>

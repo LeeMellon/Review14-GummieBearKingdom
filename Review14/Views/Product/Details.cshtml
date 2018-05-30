@@ -7,11 +7,11 @@
 }
 
 <div>
-    <img src= "@Url.Content(@Model.Product.Img)" alt="@Model.Product.ImgAlt" />
+    <img src= "@Url.Content(@Model.Product.Img)" alt="@Model.Product.ImgAlt" class="product-image"/>
     <div>
     <h2>@Model.Product.Name</h2>
-    <h3>@Model.Product.Price</h3>
-    <h3>@Model.Product.Rating</h3>
+    <h3>Price: @Model.Product.Price</h3>
+    <h3>Rating: @Model.Product.Rating</h3>
     </div>
     <div>
     <p>@Model.Product.Description</p>

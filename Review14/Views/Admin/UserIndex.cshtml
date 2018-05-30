@@ -34,9 +34,9 @@
 </tr>
 
 
-<tr class="products-display">
     @foreach(var user in Model)
         {
+<tr>
 
     <td>
         @Html.DisplayFor(model => user.UserId)
@@ -60,6 +60,6 @@
         @Html.DisplayFor(model => user.UserImgAlt)
     </td>
 
-    }
 </tr>
+    }
 </table>

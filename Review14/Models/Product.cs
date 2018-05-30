@@ -35,6 +35,11 @@ namespace Review14.Models
             }
         }
 
+        public void RoundPrice()
+        {
+            Price = Math.Round(Price, 2);
+        }
+
         public override int GetHashCode()
         {
             return this.ProductId.GetHashCode();

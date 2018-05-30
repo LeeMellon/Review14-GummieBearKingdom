@@ -8,11 +8,22 @@
  
 }
 
+.product-image {
+    width: 200px;
+    height: 150px;
+}
 
 .products-description{
 
-    color: green;
+    
 }
+
+
 td {
     padding:3vw;
+}
+
+.users-display{
+    display: flex;
+    flex-direction: column;
 }
